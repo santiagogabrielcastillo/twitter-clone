@@ -1,0 +1,19 @@
+<div class="tweet">
+  <% if tweet.is_retweet %>
+    <div class="retweet d-flex">
+      <i class="fas fa-retweet"></i>
+      <%= tweet.user.username %> Retweeted
+    </div>
+  <% end %>
+  <div class="tweet-info d-flex">
+    <div class="user-avatar">
+    </div>
+    <div class="tweet-content">
+      <div class="user-info d-flex">
+        <h3><%= tweet.user.username %></h3>
+        <p>@<%= tweet.user.user_account %></p>
+      </div>
+      <p><%= tweet.content %></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+.btn-tweet {
+  background-color: $blue;
+  color: white;
+  border: 1px solid $blue;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #158dd8;
+  }
+}
