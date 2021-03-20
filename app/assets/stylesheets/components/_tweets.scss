@@ -40,4 +40,14 @@
 .tweet-actions {
   color: $gray;
   font-size: 12px;
+
+  a {
+    color: $gray;
+    text-decoration: none;
+
+    &:hover {
+      color: red;
+      text-decoration: none;
+    }
+  }
 }
