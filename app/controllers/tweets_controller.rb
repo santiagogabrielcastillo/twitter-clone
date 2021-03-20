@@ -1,7 +1,7 @@
 class TweetsController < ApplicationController
 
   def home
-    @tweets = current_user.followed_tweets
+    @tweets = current_user.followed_tweets.shuffle
     @tweet = Tweet.new
   end
 
