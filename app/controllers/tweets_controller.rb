@@ -19,6 +19,16 @@ class TweetsController < ApplicationController
     end
   end
 
+  def update
+    @tweet = Tweet.find(params[:id])
+    if @tweet.likes_count.nil?
+      @tweet.likes_count = 1
+    else
+      @tweet.likes_count += 1
+    end
+    redirect_to home_path if @tweet.save
+  end
+
   private
 
   def tweet_params
