@@ -1,7 +1,7 @@
 class TweetsController < ApplicationController
 
   def home
-    @tweets = current_user.followed_tweets.order(created_at: :desc).to_a #shuffle
+    @tweets = current_user.followed_tweets.limit(50).order(created_at: :desc).to_a #shuffle
     current_user.tweets.each do |tweet|
       @tweets << tweet
     end
@@ -14,6 +14,7 @@ class TweetsController < ApplicationController
     if @tweet.save
       redirect_to home_path
     else
+      @tweets = current_user.followed_tweets.limit(50).order(created_at: :desc).to_a #shuffle
       render :home
     end
   end
