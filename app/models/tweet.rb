@@ -5,5 +5,5 @@ class Tweet < ApplicationRecord
   belongs_to :source, class_name: "Tweet", optional: true
 
   validates :content, presence: true
-  validates :content, length: { maximum: 140 }
+  validates :content, length: { maximum: 280 }
 end
