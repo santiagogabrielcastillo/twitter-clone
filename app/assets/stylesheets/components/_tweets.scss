@@ -1,0 +1,43 @@
+.tweet {
+  width: 100%;
+  height: auto;
+  border: 1px solid #6E767D;
+  background-color: #000000;
+}
+
+.retweet {
+  color: #6E767D
+}
+
+.user-avatar {
+  padding: 10px;
+}
+
+.tweet-content {
+  padding: 10px 3px;
+}
+
+.user-info {
+  .user-info-username {
+    color: white;
+    font-weight: 700;
+    padding-right: 3px;
+  }
+
+  p {
+    color: #6E767D;
+    font-weight: 300;
+    margin-bottom: 3px;
+    padding-right: 7px;
+  }
+}
+
+.tweet-content-text {
+  color: white;
+  font-size: 12px;
+}
+
+.tweet-actions {
+  color: #6E767D;
+  font-size: 12px;
+}
