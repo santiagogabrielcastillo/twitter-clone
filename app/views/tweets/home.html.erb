@@ -18,7 +18,7 @@
       <div class="row">
         <div class="col-12">
           <% @tweets.each do |tweet| %>
-            <div class="tweet">
+            <div class="tweet" id="tweet-<%= tweet.id %>">
               <% if tweet.is_retweet %>
                 <div class="retweet d-flex">
                   <i class="fas fa-retweet"></i>
