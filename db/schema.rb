@@ -10,10 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_19_172317) do
+ActiveRecord::Schema.define(version: 2021_03_20_133249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "follows", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "following_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tweets", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "likes"
+    t.text "content"
+    t.integer "likes_count"
+    t.integer "retweets_count"
+    t.integer "replies_count"
+    t.boolean "is_retweet"
+    t.boolean "is_reply"
+    t.bigint "source_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["source_id"], name: "index_tweets_on_source_id"
+    t.index ["user_id"], name: "index_tweets_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +46,16 @@ ActiveRecord::Schema.define(version: 2021_03_19_172317) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
+    t.text "bio"
+    t.string "location"
+    t.date "birth_date"
+    t.string "phone_number"
+    t.string "user_account"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "tweets", "tweets", column: "source_id"
+  add_foreign_key "tweets", "users"
 end

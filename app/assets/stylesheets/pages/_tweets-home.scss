@@ -1,0 +1,18 @@
+body {
+  background-color: rgba($color: #000000, $alpha: 1.0);
+}
+
+.home-title {
+  color: white;
+  border: 1px solid $gray;
+  font-size: 19px;
+  font-weight: 900;
+  padding: 8px 13px;
+  margin-bottom: 0;
+}
+
+.new-tweet-form {
+  padding: 15px;
+  color: white;
+  border: 1px solid $gray;
+}
