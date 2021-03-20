@@ -12,3 +12,33 @@
     background-color: #158dd8;
   }
 }
+
+.btn-login {
+  background-color: #D92106;
+  color: white;
+  border: 1px solid $red;
+  padding: 8px 60px;
+  border-radius: 50px;
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #D92106;
+  }
+}
+
+.btn-signup {
+  background-color: #002131;
+  color: white;
+  border: 1px solid $red;
+  padding: 8px 60px;
+  border-radius: 50px;
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #D92106;
+  }
+}

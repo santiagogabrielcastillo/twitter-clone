@@ -1,12 +1,16 @@
 <div class="background-photo">        
   <div class="container">
     <div class="row">
-      <div class="col-12">
-        <h1>Spark up a conversation</h1>
-        <div class="d-flex justify-content-end">
-          <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-danger mt-5 mr-3" %>
-          <%= link_to 'Log in', new_user_session_path, class: "btn btn-danger mt-5" %>
-        </div>
+      <div class="col-6">
+        <div class="landing-page-banner">          
+          <%= image_tag("logo-dark.png", size: "350x300") %>          
+          <div class="landing-page-links">
+            <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-signup mt-4 mr-3" %>
+            <%= link_to 'Log in', new_user_session_path, class: "btn btn-login mt-4" %>
+          </div>
+        </div>        
+      </div>
+      <div class="col-6">
       </div>
     </div>
   </div>
