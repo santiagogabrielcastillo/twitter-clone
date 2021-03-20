@@ -1,7 +1,7 @@
 class TweetsController < ApplicationController
 
   def home
-    @tweets = current_user.followed_tweets.shuffle
+    @tweets = current_user.followed_tweets.order(created_at: :desc).to_a #shuffle
     current_user.tweets.each do |tweet|
       @tweets << tweet
     end
