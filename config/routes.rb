@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   
   get '/home', to: 'tweets#home'
 
-  resources :tweets, only: %i[create]
+  resources :tweets, only: %i[create update]
 end

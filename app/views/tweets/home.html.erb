@@ -8,7 +8,7 @@
         </div>
         <div class="col-12">
           <div class="new-tweet-form">
-            <%= simple_form_for @tweet do |f| %>
+            <%= simple_form_for([@tweet], remote: true) do |f| %>
               <%= f.input :content, label: false %>
               <%= f.submit 'Tweet', class: 'btn btn-tweet' %>
             <% end %>
@@ -18,7 +18,7 @@
       <div class="row">
         <div class="col-12">
           <% @tweets.each do |tweet| %>
-            <div class="tweet">
+            <div class="tweet" id="tweet-<%= tweet.id %>">
               <% if tweet.is_retweet %>
                 <div class="retweet d-flex">
                   <i class="fas fa-retweet"></i>
@@ -44,7 +44,9 @@
                       <i class="fas fa-retweet"></i> <%= tweet.retweets_count %>
                     </div>
                     <div class="tweet-like">
-                      <i class="fas fa-heart"></i> <%= tweet.likes_count %>
+                      <%= link_to tweet_path(tweet), method: :patch, remote: true do %>
+                        <i class="fas fa-heart"></i> <span ><%= tweet.likes_count %></span>
+                      <% end %>
                     </div>
                   </div>
                 </div>
