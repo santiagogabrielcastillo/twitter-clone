@@ -1,12 +1,12 @@
 .tweet {
   width: 100%;
   height: auto;
-  border: 1px solid #6E767D;
+  border: 1px solid $gray;
   background-color: #000000;
 }
 
 .retweet {
-  color: #6E767D
+  color: $gray
 }
 
 .user-avatar {
@@ -25,7 +25,7 @@
   }
 
   p {
-    color: #6E767D;
+    color: $gray;
     font-weight: 300;
     margin-bottom: 3px;
     padding-right: 7px;
@@ -38,6 +38,6 @@
 }
 
 .tweet-actions {
-  color: #6E767D;
+  color: $gray;
   font-size: 12px;
 }
