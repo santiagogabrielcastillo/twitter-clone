@@ -31,6 +31,7 @@ users.each do |user|
     )
   end
   user.followings << users.sample(30)
+  user.followings << user
   user.followers << users.sample(30)
 end
 

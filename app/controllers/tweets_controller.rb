@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
   before_action :authenticate_user!
 
   def home
-    @tweets = current_user.followed_tweets.limit(5).order(created_at: :desc).to_a #shuffle
+    @tweets = current_user.followed_tweets.limit(5).to_a.shuffle #shuffle
     current_user.tweets.each do |tweet|
       @tweets << tweet
     end
@@ -15,7 +15,7 @@ class TweetsController < ApplicationController
     if @tweet.save
       redirect_to home_path
     else
-      @tweets = current_user.followed_tweets.limit(5).order(created_at: :desc).to_a #shuffle
+      @tweets = current_user.followed_tweets.limit(5).to_a.shuffle #shuffle
       render :home
     end
   end
