@@ -12,7 +12,8 @@ puts "Creating records..."
     bio: Faker::Quote.famous_last_words,
     birth_date: Faker::Date.birthday(min_age: 18, max_age: 65),
     phone_number: Faker::PhoneNumber.cell_phone,
-    user_account: Faker::Internet.username
+    user_account: Faker::Internet.username,
+    location: Faker::Address.city
   )
 end
 
