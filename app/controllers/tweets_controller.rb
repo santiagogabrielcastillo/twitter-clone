@@ -2,10 +2,7 @@ class TweetsController < ApplicationController
   before_action :authenticate_user!
 
   def home
-    @tweets = current_user.followed_tweets.limit(5).to_a.shuffle #shuffle
-    current_user.tweets.each do |tweet|
-      @tweets << tweet
-    end
+    @tweets = current_user.followed_tweets.order(Arel.sql('RANDOM()')).limit(10)
     @tweet = Tweet.new
   end
 
@@ -15,7 +12,7 @@ class TweetsController < ApplicationController
     if @tweet.save
       redirect_to home_path
     else
-      @tweets = current_user.followed_tweets.limit(5).to_a.shuffle #shuffle
+      @tweets = current_user.followed_tweets.order(Arel.sql('RANDOM()')).limit(10)
       render :home
     end
   end
