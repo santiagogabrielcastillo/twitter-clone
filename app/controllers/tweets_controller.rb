@@ -1,4 +1,5 @@
 class TweetsController < ApplicationController
+  before_action :authenticate_user!
 
   def home
     @tweets = current_user.followed_tweets.limit(5).order(created_at: :desc).to_a #shuffle
