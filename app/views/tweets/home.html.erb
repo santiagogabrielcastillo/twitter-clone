@@ -26,13 +26,15 @@
                 </div>
               <% end %>
               <div class="tweet-info d-flex">
-                <div class="user-avatar">
+                <%= link_to user_path(tweet.user), class: 'user-avatar' do %>
                     <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar"%>
-                </div>
+                <% end %>
                 <div class="tweet-content w-75">
                   <div class="user-info d-flex">
-                    <p class="user-info-username"><%= tweet.user.username %></p>
-                    <p>@<%= tweet.user.user_account %></p>
+                    <%= link_to user_path(tweet.user), class: 'd-flex user-info-link' do %>
+                      <p class="user-info-username"><%= tweet.user.username %></p>
+                      <p>@<%= tweet.user.user_account %></p>
+                    <% end %>
                     <p> - <%= ((Time.now - tweet.created_at)/3600).ceil %>h</p>
                   </div>
                   <p class="tweet-content-text"><%= tweet.content %></p>
