@@ -30,6 +30,14 @@
     margin-bottom: 3px;
     padding-right: 7px;
   }
+
+  .user-info-link {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 .tweet-content-text {

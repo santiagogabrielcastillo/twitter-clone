@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   
   get '/home', to: 'tweets#home', as: :tweet_root_path
 
+  resources :users, only: %i[show]
+
   resources :tweets, only: %i[create update]
 end
