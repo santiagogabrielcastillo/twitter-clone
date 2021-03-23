@@ -9,8 +9,10 @@
         <div class="col-12">
           <div class="new-tweet-form">
             <%= simple_form_for([@tweet], remote: true) do |f| %>
-              <%= f.input :content, label: false %>
-              <%= f.submit 'Tweet', class: 'btn btn-tweet' %>
+              <%= f.input :content, label: false, placeholder: "What's happening?" %>
+              <div class="d-flex justify-content-end">
+                <%= f.submit 'Tweet', class: 'btn btn-tweet' %>
+              </div>
             <% end %>
           </div>
         </div>
@@ -32,14 +34,8 @@
                 <div class="tweet-content w-75">
                   <div class="user-info d-flex">
                     <%= link_to user_path(tweet.user), class: 'd-flex user-info-link' do %>
-                      <div class="row">
-                        <div class="col-12 col-lg-6">
-                          <p class="user-info-username"><%= tweet.user.username %></p>
-                        </div>
-                        <div class="col-12 col-lg-6">
-                          <p>@<%= tweet.user.user_account %></p>
-                        </div>
-                      </div>
+                      <p class="user-info-username"><%= tweet.user.username %></p>
+                      <p>@<%= tweet.user.user_account %></p>
                     <% end %>
                     <p> - <%= ((Time.now - tweet.created_at)/3600).ceil %>h</p>
                   </div>
