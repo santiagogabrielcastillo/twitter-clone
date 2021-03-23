@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-3"></div>
-    <div class="col-lg-6">
+    <div class="col-0 col-lg-3"></div>
+    <div class="col-12 col-lg-6">
       <div class="user">
         <div class="user-header d-flex align-items-center">
           <%= link_to tweet_root_path_url do %>
@@ -24,12 +24,16 @@
               <h3><%= @user.username %></h3>
               <p>@<%= @user.user_account %></p>
             </div>
-            <%= link_to 'Follow' %>
+            <% if current_user.followings.include? @user %>
+              <div id="followed-button">Followed</div>
+            <% else %>
+              <%= link_to 'Follow', follow_user_path(@user), remote: true, method: :patch %>
+            <% end %>
           </div>
           <p><%= @user.bio %></p>
           <div class="user-infos-2 d-flex">
             <p class="mr-3"><i class="fas fa-map-marker-alt mr-1"></i><%= @user.location %></p>
-            <p><i class="fas fa-calendar-alt mr-1"></i> Joined <%= @user.created_at %></p>
+            <p><i class="fas fa-calendar-alt mr-1"></i> Joined <%= @user.created_at.strftime('%B %Y') %></p>
           </div>
           <div class="user-infos-3 d-flex">
             <p class="mr-3"><span><%= @user.followings.count %></span> Following</p>
@@ -38,6 +42,6 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-3"></div>
+    <div class="col-0 col-lg-3"></div>
   </div>
 </div>

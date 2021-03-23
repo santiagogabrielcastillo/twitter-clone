@@ -6,5 +6,11 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[show]
 
+  resources :users do
+    member do
+      patch :follow
+    end
+  end
+
   resources :tweets, only: %i[create update]
 end
