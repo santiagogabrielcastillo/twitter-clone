@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-3"></div>
-    <div class="col-lg-6">
+    <div class="col-0 col-lg-3"></div>
+    <div class="col-12 col-lg-6">
       <div class="row">
         <div class="col-12">
           <h3 class="home-title">Home</h3>
@@ -9,8 +9,10 @@
         <div class="col-12">
           <div class="new-tweet-form">
             <%= simple_form_for([@tweet], remote: true) do |f| %>
-              <%= f.input :content, label: false %>
-              <%= f.submit 'Tweet', class: 'btn btn-tweet' %>
+              <%= f.input :content, label: false, placeholder: "What's happening?" %>
+              <div class="d-flex justify-content-end">
+                <%= f.submit 'Tweet', class: 'btn btn-tweet' %>
+              </div>
             <% end %>
           </div>
         </div>
@@ -26,13 +28,15 @@
                 </div>
               <% end %>
               <div class="tweet-info d-flex">
-                <div class="user-avatar">
+                <%= link_to user_path(tweet.user), class: 'user-avatar' do %>
                     <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar"%>
-                </div>
+                <% end %>
                 <div class="tweet-content w-75">
                   <div class="user-info d-flex">
-                    <p class="user-info-username"><%= tweet.user.username %></p>
-                    <p>@<%= tweet.user.user_account %></p>
+                    <%= link_to user_path(tweet.user), class: 'd-flex user-info-link' do %>
+                      <p class="user-info-username"><%= tweet.user.username %></p>
+                      <p>@<%= tweet.user.user_account %></p>
+                    <% end %>
                     <p> - <%= ((Time.now - tweet.created_at)/3600).ceil %>h</p>
                   </div>
                   <p class="tweet-content-text"><%= tweet.content %></p>
@@ -56,6 +60,6 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-3"></div>
+    <div class="col-0 col-lg-3"></div>
   </div>
 </div>

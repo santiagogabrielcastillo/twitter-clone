@@ -1,0 +1,99 @@
+.user {
+  border-left: 1px solid $gray;
+  border-bottom: 1px solid $gray;
+  border-right: 1px solid $gray;
+  position: relative;
+}
+
+.user-header {
+  padding: 0 10px;
+
+  h3 {
+    color: white;
+    font-size: 25px;
+    font-weight: 900;
+    margin-bottom: 0;
+    margin-top: 9px;
+  }
+
+  p {
+    font-size: 10px;
+  }
+
+  a {
+    font-size: 20px;
+  }
+}
+
+.user-banner {
+  img {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.user-profile-avatar {
+  position: absolute;
+  top: 175px;
+  left: -15px;
+
+  img {
+    width: 150px;
+  }
+}
+
+.user-infos {
+  padding: 55px 15px 0 15px;
+}
+
+.user-infos > p {
+  color: #ffffffd3;
+  font-size: 14px;
+}
+
+.user-infos-1{
+  h3 {
+    color: white;
+    font-size: 25px;
+    font-weight: 900;
+    margin-bottom: 0;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  a {
+    border: 1px solid #1DA1F2;
+    border-radius: 17px;
+    padding: 5px 15px;
+
+    &:hover {
+      background-color: rgba(29, 161, 242, 0.1);
+      text-decoration: none;
+    }
+  }
+
+}
+
+.user-infos-2 {
+  font-size: 13px;
+}
+
+.user-infos-3 {
+  font-size: 13px;
+
+  span {
+    color: white;
+    font-weight: 900;
+  }
+}
+
+#followed-button {
+  color: #1DA1F2;
+  border: 1px solid #1DA1F2;
+  border-radius: 17px;
+  padding: 5px 15px;
+}

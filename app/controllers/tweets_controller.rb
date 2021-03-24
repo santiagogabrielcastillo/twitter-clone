@@ -1,10 +1,8 @@
 class TweetsController < ApplicationController
+  before_action :authenticate_user!
 
   def home
-    @tweets = current_user.followed_tweets.limit(5).order(created_at: :desc).to_a #shuffle
-    current_user.tweets.each do |tweet|
-      @tweets << tweet
-    end
+    @tweets = current_user.followed_tweets.order(Arel.sql('RANDOM()')).limit(10)
     @tweet = Tweet.new
   end
 
@@ -12,9 +10,9 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new(tweet_params)
     @tweet.user = current_user
     if @tweet.save
-      redirect_to home_path
+      redirect_to tweet_root_path_url
     else
-      @tweets = current_user.followed_tweets.limit(5).order(created_at: :desc).to_a #shuffle
+      @tweets = current_user.followed_tweets.order(Arel.sql('RANDOM()')).limit(10)
       render :home
     end
   end
@@ -26,7 +24,7 @@ class TweetsController < ApplicationController
     else
       @tweet.likes_count += 1
     end
-    redirect_to home_path(anchor: "tweet-#{@tweet.id}") if @tweet.save
+    redirect_to tweet_root_path_url(anchor: "tweet-#{@tweet.id}") if @tweet.save
   end
 
   private

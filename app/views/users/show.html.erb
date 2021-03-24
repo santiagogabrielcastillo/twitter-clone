@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-0 col-lg-3"></div>
+    <div class="col-12 col-lg-6">
+      <div class="user">
+        <div class="user-header d-flex align-items-center">
+          <%= link_to tweet_root_path_url do %>
+            <i class="fas fa-arrow-left"></i>
+          <% end %>
+          <div class="ml-3">
+            <h3><%= @user.username %></h3>
+            <p><%= @user.tweets.count %> Tweets</p>
+          </div>
+        </div>
+        <div class="user-banner">
+          <%= image_tag 'https://images.unsplash.com/photo-1616424285354-3057203b5f44?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxM3x8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' %>
+        </div>
+        <div class="user-profile-avatar">
+          <%= image_tag 'avatar-placeholder' %>
+        </div>
+        <div class="user-infos">
+          <div class="user-infos-1 d-flex justify-content-between align-items-center">
+            <div>
+              <h3><%= @user.username %></h3>
+              <p>@<%= @user.user_account %></p>
+            </div>
+            <% if current_user.followings.include? @user %>
+              <div id="followed-button">Followed</div>
+            <% else %>
+              <%= link_to 'Follow', follow_user_path(@user), remote: true, method: :patch %>
+            <% end %>
+          </div>
+          <p><%= @user.bio %></p>
+          <div class="user-infos-2 d-flex">
+            <p class="mr-3"><i class="fas fa-map-marker-alt mr-1"></i><%= @user.location %></p>
+            <p><i class="fas fa-calendar-alt mr-1"></i> Joined <%= @user.created_at.strftime('%B %Y') %></p>
+          </div>
+          <div class="user-infos-3 d-flex">
+            <p class="mr-3"><span><%= @user.followings.count %></span> Following</p>
+            <p><span><%= @user.followers.count %></span> Followers</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-0 col-lg-3"></div>
+  </div>
+</div>
