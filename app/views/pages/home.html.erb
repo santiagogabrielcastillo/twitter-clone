@@ -1,17 +1,39 @@
 <div class="background-photo">        
   <div class="container">
     <div class="row">
-      <div class="col-6">
+      <div class="col-4">
         <div class="landing-page-banner">          
           <%= image_tag("logo-dark.png", size: "350x300") %>          
           <div class="landing-page-links">
-            <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-signup mt-4 mr-3" %>
-            <%= link_to 'Log in', new_user_session_path, class: "btn btn-login mt-4" %>
+            <button type="button" class="btn btn-signup mt-4 mr-3" data-toggle="modal" data-target=".signup-form">Sign Up</button>
+            <button type="button" class="btn btn-login mt-4" data-toggle="modal" data-target=".login-form">Log in</button>
           </div>
         </div>        
       </div>
-      <div class="col-6">
+      <div class="col-8 footer-box">
+        <div class="landing-page-footer">          
+          <%= link_to "About", "#", class: "mx-1" %>
+          <%= link_to "Terms of Service", "#", class: "mx-1" %>
+          <%= link_to "Privacy Policy", "#", class: "mx-1" %>
+          <%= link_to "Cookie Policy", "#", class: "mx-1" %>
+          <%= link_to "Developers", "#", class: "mx-1" %>
+          <%= link_to "Directory", "#", class: "mx-1" %>
+          <%= link_to "Settings", "#", class: "mx-1" %>          
+        </div>
+      </div>
+      <div class="modal fade signup-form" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <%= render file: "devise/registrations/new" %>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade login-form" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <%= render file: "devise/sessions/new" %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>

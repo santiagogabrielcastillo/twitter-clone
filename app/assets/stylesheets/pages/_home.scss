@@ -1,7 +1,6 @@
 // Specific CSS for your home-page
 .background-photo {
   background-image: image-url("background_home.png");
-  object-fit: scale-down;
   width: 100%;
   height: 100vh;
 }
@@ -22,4 +21,33 @@ h1 {
 .landing-page-links {
   display: flex;
   justify-content: center;
+}
+
+.modal-content {
+  padding: 30px;
+  background-color: #002131;
+
+  h2 {
+    color: #FF2707;
+  }
+
+  a {
+    color: #FF2707;
+  }
+}
+
+.landing-page-footer {
+  position:relative;
+  text-align: end;
+  margin-right: -150px;
+
+  a {
+    color: #FF2707;
+    font-size: small;
+  }
+}
+
+.footer-box {
+  position:absolute;
+  top:95%;
 }
