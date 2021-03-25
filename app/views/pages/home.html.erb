@@ -1,7 +1,7 @@
 <div class="background-photo">        
   <div class="container">
     <div class="row">
-      <div class="col-6">
+      <div class="col-4">
         <div class="landing-page-banner">          
           <%= image_tag("logo-dark.png", size: "350x300") %>          
           <div class="landing-page-links">
@@ -10,7 +10,16 @@
           </div>
         </div>        
       </div>
-      <div class="col-6">
+      <div class="col-8 footer-box">
+        <div class="landing-page-footer">          
+          <%= link_to "About", "#", class: "mx-1" %>
+          <%= link_to "Terms of Service", "#", class: "mx-1" %>
+          <%= link_to "Privacy Policy", "#", class: "mx-1" %>
+          <%= link_to "Cookie Policy", "#", class: "mx-1" %>
+          <%= link_to "Developers", "#", class: "mx-1" %>
+          <%= link_to "Directory", "#", class: "mx-1" %>
+          <%= link_to "Settings", "#", class: "mx-1" %>          
+        </div>
       </div>
       <div class="modal fade signup-form" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">

@@ -35,3 +35,19 @@ h1 {
     color: #FF2707;
   }
 }
+
+.landing-page-footer {
+  position:relative;
+  text-align: end;
+  margin-right: -150px;
+
+  a {
+    color: #FF2707;
+    font-size: small;
+  }
+}
+
+.footer-box {
+  position:absolute;
+  top:95%;
+}
