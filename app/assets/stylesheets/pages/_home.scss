@@ -22,3 +22,16 @@ h1 {
   display: flex;
   justify-content: center;
 }
+
+.modal-content {
+  padding: 30px;
+  background-color: #002131;
+
+  h2 {
+    color: #FF2707;
+  }
+
+  a {
+    color: #FF2707;
+  }
+}
