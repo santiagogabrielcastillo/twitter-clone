@@ -61,17 +61,20 @@
       </div>
     </div>
     <div class="col-0 col-lg-3">
+      <h3 id="top-news-title">What's happening</h3>
       <% @news.each do |n| %>
-        <div class="news">
-          <div class="news-info d-flex justify-content-between">
-            <div>
-              <h4><%= n['title'] %></h4>
-              <p><em>By <%= n['author'] %></em></p>
+        <%= link_to  "#{n['url']}", class: "news-link" do %>
+          <div class="news">
+            <div class="news-info d-flex justify-content-between">
+              <div>
+                <h4><%= n['title'] %></h4>
+                <p id="news-author"><em><%= n['author'] %></em></p>
+              </div>
+              <%= image_tag "#{n['urlToImage']}", class: "news-img" %>
             </div>
-            <%= image_tag "#{n['urlToImage']}", class: "news-img" %>
+            <p><%= n['description'] %></p>
           </div>
-          <p><%= n['description'] %></p>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </div>
