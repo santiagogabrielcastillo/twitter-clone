@@ -61,8 +61,17 @@
       </div>
     </div>
     <div class="col-0 col-lg-3">
-      <% @news.each do |new| %>
-        <h1><%= new['title'] %></h1>
+      <% @news.each do |n| %>
+        <div class="news">
+          <div class="news-info d-flex justify-content-between">
+            <div>
+              <h4><%= n['title'] %></h4>
+              <p><em>By <%= n['author'] %></em></p>
+            </div>
+            <%= image_tag "#{n['urlToImage']}", class: "news-img" %>
+          </div>
+          <p><%= n['description'] %></p>
+        </div>
       <% end %>
     </div>
   </div>
