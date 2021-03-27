@@ -9,7 +9,7 @@
           <%= link_to "#", class: "btn btn-nav-menu mb-1" do %><i class="fas fa-bell mr-4" target="_blank"></i>Notifications<% end %><br>
           <%= link_to "#", class: "btn btn-nav-menu mb-1" do %><i class="fas fa-envelope mr-4" target="_blank"></i>Messages<% end %><br>
           <%= link_to "#", class: "btn btn-nav-menu mb-1" do %><i class="fas fa-bookmark mr-4" target="_blank"></i>Bookmarks<% end %><br>
-          <%= link_to "#", class: "btn btn-nav-menu mb-3" do %><i class="fas fa-user-circle mr-4" target="_blank"></i>Profile<% end %><br>          
+          <%= link_to user_path(current_user), class: "btn btn-nav-menu mb-3" do %><i class="fas fa-user-circle mr-4" target="_blank"></i>Profile<% end %><br>          
           <%= link_to "Spark", "#", class: "btn btn-tweet w-100" %>
         </div>
         <div class="log-out">
