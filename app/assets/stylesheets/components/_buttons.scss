@@ -1,15 +1,17 @@
 .btn-tweet {
-  background-color: #D92106;
+  background-color: #FF2707;
   color: white;
-  border: 1px solid #D92106;
+  border: 1px solid #FF2707;
   padding: 8px 24px;
   border-radius: 50px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: Lobster;
 
   &:hover {
     text-decoration: none;
     color: white;
-    background-color: #158dd8;
+    background-color: #D92106;
   }
 }
 
@@ -55,5 +57,22 @@
     text-decoration: none;
     color: white;
     background-color: #D92106;
+  }
+
+}
+
+.btn-nav-menu {
+  background-color: #002131;
+  color: white;
+  border: 1px solid #002131;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 900;
+  font-size: 18px;
+
+  &:hover {
+    text-decoration: none;
+    color: #FF2707;
+    background-color: #162D40;
   }
 }
