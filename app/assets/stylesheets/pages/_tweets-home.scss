@@ -1,5 +1,17 @@
 body {
-  background-color: rgba($color: #000000, $alpha: 1.0);
+  background-color: rgba($color: #002131, $alpha: 1.0);
+}
+
+.nav-menu {
+  position: sticky;
+  top:0;
+  width:100%;
+  height:100vh;
+
+  .log-out {
+    position: absolute;
+    top: 90%;
+  }  
 }
 
 .home-title {
@@ -17,7 +29,7 @@ body {
   border: 1px solid $gray;
 
   textarea {
-    background-color: rgba($color: #000000, $alpha: 1.0);
+    background-color: rgba($color: #002131, $alpha: 1.0);
     border: none;
     border-bottom: 1px solid $gray;
     color: $gray;
@@ -25,7 +37,7 @@ body {
     resize: none;
 
     &:focus {
-      background-color: rgba($color: #000000, $alpha: 1.0);
+      background-color: rgba($color: #002131, $alpha: 1.0);
       border: none;
       border-bottom: 1px solid $gray;
       color: $gray;
