@@ -4,7 +4,14 @@ class TweetsController < ApplicationController
   def home
     @tweets = current_user.followed_tweets.order(Arel.sql('RANDOM()')).limit(10)
     @tweet = Tweet.new
-    @news = News::Search.headlines['articles']
+    if params[:keyword].present?
+      @search_news = News::Search.by_keyword(params[:keyword])['articles']
+      respond_to do |format|
+        format.js { render partial: 'search-results'}
+      end
+    else
+      @news = News::Search.headlines['articles']
+    end
   end
 
   def create

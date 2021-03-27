@@ -1,0 +1,14 @@
+<% @search_news.each do |n| %>
+  <%= link_to  "#{n['url']}", class: "news-link" do %>
+    <div class="news">
+      <div class="news-info d-flex justify-content-between">
+        <div>
+          <h4><%= n['title'] %></h4>
+          <p id="news-author"><em><%= n['author'] %></em></p>
+        </div>
+        <%= image_tag "#{n['urlToImage']}", class: "news-img" %>
+      </div>
+      <p><%= n['description'] %></p>
+    </div>
+  <% end %>
+<% end %>
