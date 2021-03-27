@@ -82,6 +82,7 @@
         <%= text_field_tag :keyword, nil, placeholder: "Search for news", class: "form-control search-news" %>
         <%= submit_tag "Search", class: "btn btn-primary search-news-button" %>
       <% end %>
+      <% if @news %>
       <% @news.each do |n| %>
         <%= link_to  "#{n['url']}", class: "news-link" do %>
           <div class="news">
@@ -95,6 +96,7 @@
             <p><%= n['description'] %></p>
           </div>
         <% end %>
+      <% end %>
       <% end %>
     </div>
   </div>
