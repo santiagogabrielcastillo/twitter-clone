@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   
   get '/home', to: 'tweets#home', as: :tweet_root_path
-  get '/search-news', to: 'tweets#search_news'
 
   resources :users, only: %i[show]
 

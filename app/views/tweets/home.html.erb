@@ -78,11 +78,12 @@
     </div>
     <div class="col-0 col-lg-3">
       <h3 id="top-news-title">What's happening</h3>
-        <%= form_with(url: search_news_path, method: "get") do %>
-        <%= text_field_tag :keyword, nil, placeholder: "Search for news", class: "form-control search-news" %>
-        <%= submit_tag "Search", class: "btn btn-primary search-news-button" %>
+        <%= form_with url: "/home", method: "get", remote: true do |f| %>
+        <%= f.text_field :keyword, placeholder: "Search for news", class: "form-control search-news" %>
+        <%= f.submit "Search", class: "btn btn-primary search-news-button" %>
       <% end %>
-      <% if @news %>
+      <div id="search-results">
+      </div>
       <% @news.each do |n| %>
         <%= link_to  "#{n['url']}", class: "news-link" do %>
           <div class="news">
@@ -96,7 +97,6 @@
             <p><%= n['description'] %></p>
           </div>
         <% end %>
-      <% end %>
       <% end %>
     </div>
   </div>
