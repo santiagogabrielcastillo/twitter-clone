@@ -78,7 +78,7 @@
     </div>
     <div class="col-0 col-lg-3">
       <h3 id="top-news-title">What's happening</h3>
-        <%= form_with(url: tweet_root_path_url, method: "get", remote: true) do %>
+        <%= form_with(url: search_news_path, method: "get") do %>
         <%= text_field_tag :keyword, nil, placeholder: "Search for news", class: "form-control search-news" %>
         <%= submit_tag "Search", class: "btn btn-primary search-news-button" %>
       <% end %>

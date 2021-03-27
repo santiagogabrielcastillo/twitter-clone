@@ -4,11 +4,7 @@ class TweetsController < ApplicationController
   def home
     @tweets = current_user.followed_tweets.order(Arel.sql('RANDOM()')).limit(10)
     @tweet = Tweet.new
-    if params[:keyword]
-      @news = News::Search.by_keyword(params[:keyword])
-    else
-      @news = News::Search.headlines['articles']
-    end
+    search_news
   end
 
   def create
@@ -30,6 +26,15 @@ class TweetsController < ApplicationController
       @tweet.likes_count += 1
     end
     redirect_to tweet_root_path_url(anchor: "tweet-#{@tweet.id}") if @tweet.save
+  end
+
+  def search_news
+    if params[:keyword]
+      @news = News::Search.by_keyword(params[:keyword])['articles']
+    else
+      @news = News::Search.headlines['articles']
+    end
+    render :home
   end
 
   private
